@@ -54,12 +54,12 @@ export const NEXT_AUTH_CONFIG : NextAuthOptions = {
             }
             return token;
         },
-        session: async ({session,user}: any) => {
-            if(user){
-                session._id = user._id?.toString(); // Convert ObjectId to string
-                session.isValid = user.isValid;
-                session.isAcceptingMessages = user.isAcceptingMessages;
-                session.username = user.username;
+        session: async ({session,token}: any) => {
+            if(token){
+                session._id = token._id; // Convert ObjectId to string
+                session.isValid = token.isValid;
+                session.isAcceptingMessages = token.isAcceptingMessages;
+                session.username = token.username;
             }
             return session;
         }
