@@ -1,13 +1,20 @@
 import dbConnect from "@/lib/dbConnection";
 import userModel, { Message } from "@/model/user";
-import { success } from "zod";
-
+import { messageSchema } from "@/schemas/messageSchema";
 
 export async function POST(request: Request){
     await dbConnect();
 
     const { username, content } = await request.json();
     try{
+        const checkMessageSchema = messageSchema.safeParse(content);
+        if(!checkMessageSchema.success){
+            return Response.json(
+                {success: false, message: 'Invalid message Schema'},
+                {status: 400}
+            );
+        }
+
         const user = await userModel.findOne({username});
 
         if(!user){
