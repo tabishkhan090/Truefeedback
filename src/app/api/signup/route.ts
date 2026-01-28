@@ -60,7 +60,7 @@ export async function POST (request: Request) {
                 verifyCodeExpiry: expirydate,
                 isValid: false,
                 messages: [],
-                isAcceptingMessages: true,
+                isAcceptingMessage: true,
             });
 
             //email verificstion
