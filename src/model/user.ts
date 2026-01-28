@@ -1,12 +1,12 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface Message extends Document{
-    context : string,
+    content : string,
     createdAt: Date
 }
 
 const MessageSchema : Schema<Message> = new mongoose.Schema({
-    context: {
+    content: {
         type: String,
         required: true
     },
@@ -25,8 +25,8 @@ export interface User extends Document{
     verifyCode: string,
     verifyCodeExpiry: Date,
     isValid: boolean,
-    messages: Message,
     isAcceptingMessage: boolean,
+    messages: Message[],
 };
 
 const userSchema: Schema<User> = new Schema({
