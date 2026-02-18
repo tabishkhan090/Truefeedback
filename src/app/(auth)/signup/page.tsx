@@ -17,7 +17,7 @@ import Link from "next/link";
 import axios, { AxiosError } from "axios"
 import { useEffect, useState } from "react";
 import { useDebounceValue } from "usehooks-ts"
-import { apiResponse } from "@/types/apiResponce";
+import { apiResponse } from "@/types/ApiResponse";
 import { signupSchema } from "@/schemas/signupSchema";
 import { useRouter } from 'next/navigation';
 import { useToast } from "@/components/ui/use-toast";

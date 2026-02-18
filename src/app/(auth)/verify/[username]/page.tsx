@@ -10,7 +10,7 @@ import axios, { AxiosError } from "axios";
 import { Toast } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 import { title } from "process";
-import { apiResponse } from "@/types/apiResponce";
+import { apiResponse } from "@/types/ApiResponse";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
