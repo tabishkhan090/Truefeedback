@@ -33,6 +33,24 @@ export default function SignUp(){
     const [isSubmitting, setisSubmitting] = useState(false);
 
     const debounceUsername = useDebounceValue(username, 300);
+
+    /* 
+        function useDebounceValue( value, delay ) {
+            const [debounce, setdebounce] = useState(value);
+            useEffect( () => {
+                    const handler = setTimeout(()=> {
+                        setdebounce(value)
+                    }, delay)
+
+                return ()=> {
+                    clearTimeout(handler);
+                }
+            }
+            ,[value,delay])
+            return debounce;
+        };
+        export default useDebounceValue
+    */
     
     //zod validation
     const form = useForm<z.infer<typeof signupSchema>>({

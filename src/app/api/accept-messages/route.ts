@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { NEXT_AUTH_CONFIG } from "@/lib/auth";
 import { User } from "next-auth";
 
-
+//it will update
 export async function POST(request: Request){
     await dbConnect();
 
@@ -47,7 +47,7 @@ export async function POST(request: Request){
         }
     }
 }
-
+// it will just tell if user is accepting message or not
 export async function GET(request: Request){
     await dbConnect();
 
